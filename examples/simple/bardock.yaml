@@ -1,0 +1,14 @@
+services:
+  service1:
+    dockerfile: ./service1/Dockerfile
+    image_name: service1
+    build_context: ./service1
+
+  service2:
+    dockerfile: ./service2/Dockerfile
+    image_name: service2
+    push: false
+
+global_config:
+  registry_url: alexxi19
+  image_tag: latest
