@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	verbose   bool
+	version   = "0.1.0"
 	logger    = logrus.New()
 	cliConfig = CommandLineConfig{}
 )
@@ -30,12 +30,18 @@ func main() {
 		},
 	}
 
+	var showVersion bool
+	var verbose bool
 	var rootCmd = &cobra.Command{
 		Use:   "bardock",
 		Short: "Bardock: A monorepo Dockerfile management tool",
 		PreRun: func(cmd *cobra.Command, args []string) {
 			if verbose {
 				logger.SetLevel(logrus.DebugLevel)
+			}
+			if showVersion {
+				fmt.Printf("Bardock version %s\n", version)
+				os.Exit(0)
 			}
 		},
 		Run: func(cmd *cobra.Command, args []string) {
@@ -55,6 +61,7 @@ func main() {
 		},
 	}
 
+	rootCmd.Flags().BoolVar(&showVersion, "version", false, "Print the version number of bardock")
 	rootCmd.Flags().StringVarP(&cliConfig.FilePath, "file", "f", "bardock.yaml", "Path to the bardock YAML file")
 	rootCmd.Flags().StringVarP(&cliConfig.ImageTag, "tag", "t", "", "Override image tag")
 	rootCmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "Verbose output")
