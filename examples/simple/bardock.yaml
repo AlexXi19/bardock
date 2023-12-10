@@ -9,6 +9,6 @@ services:
     image_name: service2
     push: false
 
-global_config:
+config:
   registry_url: alexxi19
   image_tag: latest

@@ -61,11 +61,11 @@ func main() {
 		},
 	}
 
-	rootCmd.Flags().BoolVar(&showVersion, "version", false, "Print the version number of bardock")
-	rootCmd.Flags().StringVarP(&cliConfig.FilePath, "file", "f", "bardock.yaml", "Path to the bardock YAML file")
-	rootCmd.Flags().StringVarP(&cliConfig.ImageTag, "tag", "t", "", "Override image tag")
-	rootCmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "Verbose output")
-	rootCmd.Flags().BoolVarP(&cliConfig.Push, "push", "p", false, "Override push image to registry")
+	rootCmd.Flags().BoolVar(&showVersion, "version", false, "print the version number of bardock")
+	rootCmd.Flags().StringVarP(&cliConfig.FilePath, "file", "f", "bardock.yaml", "path to the bardock YAML file")
+	rootCmd.Flags().StringVarP(&cliConfig.ImageTag, "tag", "t", "", "override image tag")
+	rootCmd.Flags().BoolVarP(&verbose, "verbose", "v", false, "verbose output")
+	rootCmd.Flags().BoolVarP(&cliConfig.Push, "push", "p", false, "override push image to registry")
 
 	rootCmd.Execute()
 }

@@ -11,7 +11,7 @@ import (
 
 type Config struct {
 	Services     map[string]Service `yaml:"services"`
-	GlobalConfig GlobalConfig       `yaml:"global_config"`
+	GlobalConfig GlobalConfig       `yaml:"config"`
 }
 
 type Service struct {
