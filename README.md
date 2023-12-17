@@ -1,6 +1,8 @@
 # Bardock
 Monorepo Dockerfile management tool
 
+https://notes.alexxi.dev/Thoughts/Weekend-Projects/Bardock---a-Monorepo-Dockerfile-management-tool
+
 ```
 Usage:
   bardock [flags]
